@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | NIM 226661035</title>
+    <meta name="description" content="Portfolio Teknologi Rekayasa Komputer - Politeknik Negeri Samarinda">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+    <!-- Using Font-Awesome via CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Visual Categorical Navigation -->
+    <aside class="visual-nav" id="visual-nav">
+        <div class="nav-track">
+            <button class="nav-btn active" data-target="#hero">
+                <div class="btn-icon">
+                    <i class="fas fa-home"></i>
+                    <span class="btn-label">Home</span>
+                </div>
+            </button>
+            <button class="nav-btn" data-target="#about">
+                <div class="btn-icon">
+                    <i class="fas fa-user"></i>
+                    <span class="btn-label">About</span>
+                </div>
+            </button>
+            <button class="nav-btn" data-target="#skills">
+                <div class="btn-icon">
+                    <i class="fas fa-code"></i>
+                    <span class="btn-label">Skills</span>
+                </div>
+            </button>
+            <button class="nav-btn" data-target="#projects">
+                <div class="btn-icon">
+                    <i class="fas fa-project-diagram"></i>
+                    <span class="btn-label">Projects</span>
+                </div>
+            </button>
+            <button class="nav-btn" data-target="#contact">
+                <div class="btn-icon">
+                    <i class="fas fa-envelope"></i>
+                    <span class="btn-label">Contact</span>
+                </div>
+            </button>
+        </div>
+    </aside>
+
+    <main class="container">
+        <!-- Hero Section -->
+        <section id="hero" class="fullscreen-section">
+            <div class="content">
+                <h2 class="reveal">Hello, I'm</h2>
+                <h1 class="reveal delay-1">Muhammad Fauzi Ariyo</h1>
+                <p class="reveal delay-2">Graduate in Computer Engineering Technology | Politeknik Negeri Samarinda</p>
+                <div class="hero-id reveal delay-3">
+                    <span class="badge">NIM 226661035</span>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span>Scroll Down</span>
+                <div class="mouse"></div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="fullscreen-section">
+            <div class="section-container">
+                <div class="title-group">
+                    <span class="subtitle">About Me</span>
+                    <h2 class="section-title">Education & Background</h2>
+                </div>
+                <div class="about-grid">
+                    <div class="about-card glass reveal-left">
+                        <i class="fas fa-university icon"></i>
+                        <h3>Politeknik Negeri Samarinda</h3>
+                        <p>Jurusan Teknologi Informasi</p>
+                        <p class="sub-text">Prodi Teknologi Rekayasa Komputer</p>
+                    </div>
+                    <div class="about-content reveal-right">
+                        <h3>Graduate in Computer Engineering Technology</h3>
+                        <p>I graduated from Politeknik Negeri Samarinda with a strong foundation in computer engineering
+                            technology. My academic journey focused on embedded systems, networking, and software
+                            development, preparing me to contribute to the fields of IoT, digital systems, and innovative
+                            technology solutions.</p>
+                        <div class="stats">
+                            <div class="stat-item">
+                                <span class="number">2022 - 2026</span>
+                                <span class="label">Graduate</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="number">5+</span>
+                                <span class="label">Projects</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="fullscreen-section">
+            <div class="section-container">
+                <div class="title-group">
+                    <span class="subtitle">My Expertise</span>
+                    <h2 class="section-title">Technical Skills</h2>
+                </div>
+                <div class="skills-grid">
+                    <!-- Development Category -->
+                    <div class="skill-category glass reveal-scale">
+                        <div class="cat-header">
+                            <i class="fas fa-code"></i>
+                            <h3>Development</h3>
+                        </div>
+                        <ul>
+                            <li>Basic Web Development (HTML/CSS/JS)</li>
+                            <li>Basic Android Development</li>
+                        </ul>
+                    </div>
+                    <!-- Hardware Category -->
+                    <div class="skill-category glass reveal-scale delay-1">
+                        <div class="cat-header">
+                            <i class="fas fa-microchip"></i>
+                            <h3>Hardware & IoT</h3>
+                        </div>
+                        <ul>
+                            <li>Microcontroller (Arduino/ESP32)</li>
+                            <li>Sensor Integration</li>
+                            <li>PCB Design Basics</li>
+                        </ul>
+                    </div>
+                </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="fullscreen-section">
+            <div class="section-container">
+                <div class="title-group">
+                    <span class="subtitle">My Work</span>
+                    <h2 class="section-title">Featured Projects</h2>
+                </div>
+
+                <div class="project-pages" id="project-pages">
+                    <div class="project-page active" data-page="1">
+                        <div class="project-card glass reveal-scale">
+                            <div class="project-image">
+                                <img src="water_level.jpeg" alt="Water Level Prediction project" />
+                            </div>
+                            <div class="project-info">
+                                <span class="project-badge">Published Research</span>
+                                <h3>Water Level Prediction</h3>
+                                <p class="project-meta">Final Year Project / Thesis • IoT & Machine Learning</p>
+                                <p>Water Level Prediction Based on Internet of Things and Machine Learning.</p>
+                                <div class="tags">
+                                    <span>IoT</span>
+                                    <span>ESP32</span>
+                                    <span>Firebase</span>
+                                    <span>Machine Learning</span>
+                                    <span>Android</span>
+                                    <span>monitoring</span>
+                                </div>
+                                <a class="project-link" href="https://doi.org/10.59934/jaiea.v5i3.2557" target="_blank" rel="noopener noreferrer">
+                                    View Publication
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-card glass reveal-scale">
+                            <div class="project-image">
+                                <img src="balmon.png" alt="Balmon website project" />
+                            </div>
+                            <div class="project-info">
+                                <span class="project-badge">Website</span>
+                                <h3>Balmon Samarinda</h3>
+                                <p class="project-meta">Public Service Website • Monitoring Platform</p>
+                                <p>A website for public service and monitoring </p>
+                                <div class="tags">
+                                    <span>Website</span>
+                                    <span>UI/UX</span>
+                                    <span>Monitoring</span>
+                                </div>
+                                <a class="project-link" href="https://pelayanan.balmonsamarinda.com/" target="_blank" rel="noopener noreferrer">
+                                    View Website
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-card glass reveal-scale">
+                            <div class="project-image">
+                                <img src="water_level.jpeg" alt="Water Level Prediction project" />
+                            </div>
+                            <div class="project-info">
+                                <span class="project-badge">Published Research</span>
+                                <h3>Water Level Prediction</h3>
+                                <p class="project-meta">Final Year Project / Thesis • IoT & Machine Learning</p>
+                                <p>Water Level Prediction Based on Internet of Things and Machine Learning.</p>
+                                <div class="tags">
+                                    <span>Website</span>
+                                    <span>ESP32</span>
+                                    <span>Firebase</span>
+                                </div>
+                                <a class="project-link" href="https://pelayanan.balmonsamarinda.com/" target="_blank" rel="noopener noreferrer">
+                                    View Website
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-pagination" id="project-pagination"></div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="fullscreen-section">
+            <div class="section-container">
+                <div class="title-group">
+                    <span class="subtitle">Get In Touch</span>
+                    <h2 class="section-title">Let's Connect</h2>
+                </div>
+                <div class="contact-wrapper glass">
+                    <div class="contact-links">
+                        <a href="https://www.linkedin.com/in/muhammad-fauzi-ariyo-634987312/" target="_blank" class="contact-item">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/FauziAriyo48" target="_blank" class="contact-item">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://instagram.com/fauziariyo" target="_blank" class="contact-item">
+                            <i class="fab fa-instagram"></i>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=fauziariyo12@gmail.com&su=Halo%20Fauzi&body=Halo%20Fauzi%2C%0A%0ASaya%20tertarik%20dengan%20profil%20Anda.%0A%0ATerima%20kasih." target="_blank" rel="noopener noreferrer" class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>Email Me</span>
+                        </a>
+                    </div>
+                    <div class="contact-footer">
+                        <p>By <strong>Muhammad Fauzi Ariyo</strong> &copy; 2026</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
