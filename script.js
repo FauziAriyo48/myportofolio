@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const projectPagesContainer = document.getElementById('project-pages');
     const paginationContainer = document.getElementById('project-pagination');
     const projectCards = Array.from(document.querySelectorAll('.project-card'));
+    const skillsPagesContainer = document.getElementById('skills-pages');
+    const skillsPaginationContainer = document.getElementById('skills-pagination');
     const itemsPerPage = 2;
 
     function showSection(targetId) {
@@ -70,6 +72,31 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    function renderSkillsPages() {
+        if (!skillsPagesContainer || !skillsPaginationContainer) return;
+
+        const pages = Array.from(skillsPagesContainer.querySelectorAll('.skills-page'));
+        skillsPaginationContainer.innerHTML = '';
+
+        const labels = ['Skills', 'Certificate'];
+
+        pages.forEach((page, index) => {
+            const button = document.createElement('button');
+            button.type = 'button';
+            button.className = 'skills-page-btn' + (index === 0 ? ' active' : '');
+            button.textContent = labels[index] || `Page ${index + 1}`;
+            button.dataset.page = String(index + 1);
+            button.addEventListener('click', () => {
+                const allPages = skillsPagesContainer.querySelectorAll('.skills-page');
+                allPages.forEach(p => p.classList.toggle('active', Number(p.dataset.page) === Number(button.dataset.page)));
+                skillsPaginationContainer.querySelectorAll('.skills-page-btn').forEach(btn => {
+                    btn.classList.toggle('active', Number(btn.dataset.page) === Number(button.dataset.page));
+                });
+            });
+            skillsPaginationContainer.appendChild(button);
+        });
+    }
+
     showSection('#hero');
 
     navButtons.forEach(btn => {
@@ -80,4 +107,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     renderProjectPages();
+    renderSkillsPages();
 });

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | NIM 226661035</title>
+    <link rel="icon" type="image/png" href="panda.png">
     <meta name="description" content="Portfolio Teknologi Rekayasa Komputer - Politeknik Negeri Samarinda">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -108,35 +109,81 @@
         <!-- Skills Section -->
         <section id="skills" class="fullscreen-section">
             <div class="section-container">
-                <div class="title-group">
-                    <span class="subtitle">My Expertise</span>
-                    <h2 class="section-title">Technical Skills</h2>
-                </div>
-                <div class="skills-grid">
-                    <!-- Development Category -->
-                    <div class="skill-category glass reveal-scale">
-                        <div class="cat-header">
-                            <i class="fas fa-code"></i>
-                            <h3>Development</h3>
+                <div class="skills-pages" id="skills-pages">
+                    <div class="skills-page active" data-page="1">
+                        <div class="title-group">
+                            <span class="subtitle">My Expertise</span>
+                            <h2 class="section-title">Skills</h2>
                         </div>
-                        <ul>
-                            <li>Basic Web Development (HTML/CSS/JS)</li>
-                            <li>Basic Android Development</li>
-                        </ul>
-                    </div>
-                    <!-- Hardware Category -->
-                    <div class="skill-category glass reveal-scale delay-1">
-                        <div class="cat-header">
-                            <i class="fas fa-microchip"></i>
-                            <h3>Hardware & IoT</h3>
+                        <div class="skills-grid">
+                            <!-- Development Category -->
+                            <div class="skill-category glass reveal-scale">
+                                <div class="cat-header">
+                                    <i class="fas fa-code"></i>
+                                    <h3>Development</h3>
+                                </div>
+                                <ul>
+                                    <li>Basic Web Development (HTML/CSS/JS)</li>
+                                    <li>Basic Android Development</li>
+                                </ul>
+                            </div>
+                            <!-- Hardware Category -->
+                            <div class="skill-category glass reveal-scale delay-1">
+                                <div class="cat-header">
+                                    <i class="fas fa-microchip"></i>
+                                    <h3>Hardware & IoT</h3>
+                                </div>
+                                <ul>
+                                    <li>Microcontroller (Arduino/ESP32)</li>
+                                    <li>Sensor Integration</li>
+                                    <li>PCB Design Basics</li>
+                                </ul>
+                            </div>
                         </div>
-                        <ul>
-                            <li>Microcontroller (Arduino/ESP32)</li>
-                            <li>Sensor Integration</li>
-                            <li>PCB Design Basics</li>
-                        </ul>
+                    </div>
+
+                    <div class="skills-page" data-page="2">
+                        <div class="title-group">
+                            <span class="subtitle">Achievements</span>
+                            <h2 class="section-title">Certificates</h2>
+                        </div>
+
+                        <div class="certificate-grid">
+                            <div class="certificate-card glass reveal-scale">
+                                <div class="certificate-visual">
+                                    <img src="assets/dicoding.png" alt="Basic Web Development certificate" />
+                                </div>
+                                <span class="certificate-badge">Certification</span>
+                                <h3>Web Development</h3>
+                                <p>Completed a web development course covering HTML, CSS, and JavaScript fundamentals for building responsive interfaces.</p>
+                                <a class="certificate-preview-btn" href="assets/sertifikat_course_51_3974627_190424034700.pdf" target="_blank" rel="noopener noreferrer">Preview</a>
+                            </div>
+
+                            <div class="certificate-card glass reveal-scale delay-1">
+                                <div class="certificate-visual">
+                                    <img src="assets/CCNAv7Introduction.png" alt="CCNA Introduction to Networks certificate" />
+                                </div>
+                                <span class="certificate-badge">Certification</span>
+                                <h3>CCNA: Introduction to Networks</h3>
+                                <p>Earned a Cisco CCNA certification in networking fundamentals, IP connectivity, and basic network design concepts.</p>
+                                <a class="certificate-preview-btn" href="assets/CCNA-_Introduction_to_Networks_certificate_fauziariyo12-gmail-com_f585bbce-40c8-449c-97eb-a89c05eb4d27.pdf" target="_blank" rel="noopener noreferrer">Preview</a>
+                            </div>
+
+                            <div class="certificate-card glass reveal-scale delay-2">
+                                <div class="certificate-visual">
+                                    <img src="assets/CCNAv7Switch.png" alt="CCNA Switching Routing and Wireless Essentials certificate" />
+                                </div>
+                                <span class="certificate-badge">Certification</span>
+                                <h3>CCNA: Switching, Routing, and Wireless Essentials</h3>
+                                <p>Completed CCNA training focused on switching, routing, wireless networking, and foundational enterprise network operations.</p>
+                                <a class="certificate-preview-btn" href="assets/CCNA-_Switching-_Routing-_and_Wireless_Essentials_certificate_fauziariyo12-gmail-com_08acb22c-1622-4a29-bec6-cee26aae9ba4.pdf" target="_blank" rel="noopener noreferrer">Preview</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+                <div class="skills-pagination" id="skills-pagination"></div>
+            </div>
         </section>
 
         <!-- Projects Section -->
@@ -183,25 +230,6 @@
                                     <span>Website</span>
                                     <span>UI/UX</span>
                                     <span>Monitoring</span>
-                                </div>
-                                <a class="project-link" href="https://pelayanan.balmonsamarinda.com/" target="_blank" rel="noopener noreferrer">
-                                    View Website
-                                </a>
-                            </div>
-                        </div>
-                        <div class="project-card glass reveal-scale">
-                            <div class="project-image">
-                                <img src="water_level.jpeg" alt="Water Level Prediction project" />
-                            </div>
-                            <div class="project-info">
-                                <span class="project-badge">Published Research</span>
-                                <h3>Water Level Prediction</h3>
-                                <p class="project-meta">Final Year Project / Thesis • IoT & Machine Learning</p>
-                                <p>Water Level Prediction Based on Internet of Things and Machine Learning.</p>
-                                <div class="tags">
-                                    <span>Website</span>
-                                    <span>ESP32</span>
-                                    <span>Firebase</span>
                                 </div>
                                 <a class="project-link" href="https://pelayanan.balmonsamarinda.com/" target="_blank" rel="noopener noreferrer">
                                     View Website

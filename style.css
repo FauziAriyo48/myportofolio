@@ -93,7 +93,7 @@ main.container {
     padding: 0.75rem 0.4rem; /* Vertical padding creates continuous hover zone */
     position: relative;
     outline: none;
-    transition: width 0.3s cubic-bezier(0.2, 1, 0.3, 1);
+    transition: transform 0.2s ease;
 }
 
 .btn-icon {
@@ -111,7 +111,7 @@ main.container {
     overflow: hidden;
     white-space: nowrap;
     width: 50px; 
-    transition: all 0.3s cubic-bezier(0.2, 1, 0.3, 1);
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
@@ -130,13 +130,6 @@ main.container {
     color: inherit;
 }
 
-/* Expansion Rule: When the ENTIRE dock is hovered, expand all buttons */
-.nav-track:hover .btn-icon {
-    width: 140px; 
-    background: var(--bg-light); /* Base color for non-active expansion */
-}
-
-/* Specific Highlight: When a specific button is hovered or active */
 .nav-btn:hover .btn-icon,
 .nav-btn.active .btn-icon {
     background: var(--primary-color);
@@ -145,13 +138,11 @@ main.container {
     box-shadow: 0 8px 20px var(--glow-color);
 }
 
-.nav-track:hover .btn-label {
-    opacity: 1;
-    transform: translateX(0);
+.nav-btn:hover {
+    transform: translateY(-1px);
 }
 
 .nav-btn.active .btn-icon {
-    /* Ensure active icon is always green even when dock is not hovered */
     background: var(--primary-color);
     color: white;
     box-shadow: 0 5px 15px var(--glow-color);
@@ -161,37 +152,70 @@ main.container {
 /* Mobile Responsive Overhaul */
 @media (max-width: 768px) {
     .visual-nav {
-        right: 0;
-        left: 0;
+        right: auto;
+        left: 50%;
         top: auto;
-        bottom: 0;
-        padding: 1rem;
-        transform: none;
+        bottom: 0.75rem;
+        transform: translateX(-50%);
         display: flex;
         justify-content: center;
-        background: linear-gradient(to top, white 60%, transparent);
+        background: transparent;
     }
 
     .nav-track {
-        flex-direction: row;
-        padding: 0.5rem;
-        gap: 0.8rem;
-        border-radius: 30px;
-    }
-
-    .nav-btn, .nav-btn.active {
         width: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.45rem;
+        padding: 0.5rem;
+        border-radius: 20px;
+        backdrop-filter: blur(16px);
+        box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
     }
 
-    .btn-icon, .nav-btn.active .btn-icon, .nav-btn:hover .btn-icon {
-        width: 45px;
-        height: 45px;
+    .nav-btn,
+    .nav-btn.active {
+        width: 46px;
+        height: 46px;
         padding: 0;
+        display: flex;
+        align-items: center;
         justify-content: center;
+        flex: none;
+    }
+
+    .btn-icon,
+    .nav-btn.active .btn-icon,
+    .nav-btn:hover .btn-icon {
+        width: 46px;
+        height: 46px;
+        padding: 0;
+        border-radius: 14px;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        font-size: 1rem;
     }
 
     .btn-label {
         display: none;
+    }
+
+    .nav-btn:hover .btn-icon {
+        background: rgba(16, 185, 129, 0.12);
+        color: var(--primary-color);
+        border-color: rgba(16, 185, 129, 0.25);
+    }
+
+    .nav-btn.active .btn-icon {
+        background: var(--primary-color);
+        color: #fff;
+        box-shadow: 0 8px 18px rgba(16, 185, 129, 0.2);
+    }
+
+    .fullscreen-section {
+        padding-bottom: 6rem !important;
     }
 
     /* Global Reset for Mobile */
@@ -566,6 +590,141 @@ main.container {
 .skill-category li:hover {
     color: var(--text-light);
     padding-left: 10px;
+}
+
+.skills-pages {
+    display: block;
+}
+
+.skills-page {
+    display: none;
+}
+
+.skills-page.active {
+    display: block;
+}
+
+.certificate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.25rem;
+}
+
+.certificate-card {
+    padding: 1.5rem;
+    border-radius: 18px;
+    transition: var(--transition-fast);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.certificate-visual {
+    width: 100%;
+    height: 150px;
+    border-radius: 14px;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.12), rgba(255, 255, 255, 0.05));
+    border: 1px dashed rgba(255, 255, 255, 0.25);
+    overflow: hidden;
+}
+
+.certificate-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.certificate-visual i {
+    font-size: 2.5rem;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.certificate-badge {
+    display: inline-block;
+    padding: 0.45rem 0.8rem;
+    border-radius: 999px;
+    background: rgba(16, 185, 129, 0.12);
+    color: var(--primary-color);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.certificate-card h3 {
+    margin: 0 0 0.8rem;
+    font-size: 1.2rem;
+    color: var(--text-light);
+}
+
+.certificate-card p {
+    margin: 0;
+    color: var(--text-muted);
+    line-height: 1.7;
+    flex: 1;
+}
+
+.certificate-preview-btn {
+    margin-top: 1.2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 46px;
+    padding: 0.8rem 1rem;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    align-self: stretch;
+}
+
+.certificate-preview-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
+}
+
+.skills-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.skills-page-btn {
+    min-width: 72px;
+    height: 42px;
+    padding: 0 1.1rem;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--text-dark);
+    border-radius: 999px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+.skills-page-btn:hover,
+.skills-page-btn.active {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: #fff;
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(16, 185, 129, 0.18);
 }
 
 /* Projects */
