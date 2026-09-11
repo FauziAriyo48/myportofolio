@@ -111,7 +111,7 @@ main.container {
     overflow: hidden;
     white-space: nowrap;
     width: 50px; 
-    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    transition: width 0.3s cubic-bezier(0.2, 1, 0.3, 1), background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
@@ -128,6 +128,11 @@ main.container {
     transform: translateX(-10px);
     transition: all 0.3s ease;
     color: inherit;
+}
+
+.nav-track:hover .btn-icon {
+    width: 140px;
+    background: var(--bg-light);
 }
 
 .nav-btn:hover .btn-icon,
@@ -148,30 +153,39 @@ main.container {
     box-shadow: 0 5px 15px var(--glow-color);
 }
 
+.nav-track:hover .btn-label {
+    opacity: 1;
+    transform: translateX(0);
+}
+
 /* Mobile Adjustments for Dock */
 /* Mobile Responsive Overhaul */
 @media (max-width: 768px) {
     .visual-nav {
-        right: auto;
-        left: 50%;
+        right: 0;
+        left: 0;
         top: auto;
         bottom: 0.75rem;
-        transform: translateX(-50%);
+        transform: none;
         display: flex;
         justify-content: center;
         background: transparent;
+        pointer-events: none;
     }
 
     .nav-track {
-        width: auto;
+        width: min(92vw, 360px);
         display: flex;
         flex-direction: row;
         align-items: center;
+        justify-content: center;
         gap: 0.45rem;
         padding: 0.5rem;
         border-radius: 20px;
         backdrop-filter: blur(16px);
         box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+        margin: 0 auto;
+        pointer-events: auto;
     }
 
     .nav-btn,
@@ -225,29 +239,30 @@ main.container {
     }
 
     body {
-        overflow: hidden;
-        position: fixed; /* Lock body scroll */
+        overflow-x: hidden;
+        overflow-y: auto;
+        position: static;
         width: 100%;
-        height: 100%;
+        height: auto;
     }
 
     .fullscreen-section {
         padding: 0 !important;
-        overflow: hidden;
+        overflow: visible;
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 100vh;
+        min-height: 100vh;
+        height: auto;
         width: 100vw;
     }
 
     .section-container {
         padding: 3rem 1rem 120px 1rem !important; /* Proper spacing for dock */
         width: 100% !important;
-        height: 100% !important;
-        max-height: 100vh !important;
-        overflow-y: auto !important;
-        overflow-x: hidden !important;
+        height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
@@ -594,14 +609,17 @@ main.container {
 
 .skills-pages {
     display: block;
+    min-height: 560px;
 }
 
 .skills-page {
     display: none;
+    min-height: 560px;
 }
 
 .skills-page.active {
     display: block;
+    min-height: 560px;
 }
 
 .certificate-grid {
@@ -696,13 +714,15 @@ main.container {
 .skills-pagination {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 0.75rem;
     margin-top: 2rem;
     flex-wrap: wrap;
 }
 
 .skills-page-btn {
-    min-width: 72px;
+    width: 140px;
+    min-height: 42px;
     height: 42px;
     padding: 0 1.1rem;
     border: 1px solid rgba(59, 130, 246, 0.2);
@@ -711,11 +731,13 @@ main.container {
     border-radius: 999px;
     font-weight: 700;
     cursor: pointer;
-    transition: var(--transition-fast);
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     white-space: nowrap;
+    line-height: 1;
+    flex: 0 0 140px;
 }
 
 .skills-page-btn:hover,
@@ -723,8 +745,8 @@ main.container {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: #fff;
     border-color: transparent;
-    transform: translateY(-2px);
     box-shadow: 0 10px 20px rgba(16, 185, 129, 0.18);
+    transform: none;
 }
 
 /* Projects */
@@ -844,20 +866,27 @@ main.container {
 .project-pagination {
     display: flex;
     justify-content: center;
+    align-items: stretch;
     gap: 0.75rem;
     margin-top: 2rem;
 }
 
 .page-btn {
+    min-width: 42px;
     width: 42px;
+    min-height: 42px;
     height: 42px;
+    padding: 0 1rem;
     border: 1px solid rgba(59, 130, 246, 0.2);
     background: rgba(255, 255, 255, 0.2);
     color: var(--text-dark);
-    border-radius: 50%;
+    border-radius: 999px;
     font-weight: 700;
     cursor: pointer;
     transition: var(--transition-fast);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .page-btn:hover,

@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const pages = Array.from(skillsPagesContainer.querySelectorAll('.skills-page'));
         skillsPaginationContainer.innerHTML = '';
 
-        const labels = ['Skills', 'Certificate'];
+        const labels = ['Skills', 'Experience', 'Certificate'];
 
         pages.forEach((page, index) => {
             const button = document.createElement('button');
